@@ -7,6 +7,7 @@ import Register from '../views/Register.vue'
 import MyGalleries from '../views/MyGalleries.vue'
 import ViewGallery from '../views/ViewGallery.vue'
 import AuthorGalleries from '../views/AuthorGalleries.vue'
+import EditGallery from '../views/EditGallery.vue'
 
 Vue.use(VueRouter)
 
@@ -23,22 +24,26 @@ const routes = [
 	{
 		path: '/login',
 		name: 'Login',
-		component: Login
+		component: Login,
+		meta: { guestRequired: true }
 	},
 	{
 		path: '/register',
 		name: 'Register',
-		component: Register
+		component: Register,
+		meta: { guestRequired: true }		
 	},
 	{
 		path: '/create',
 		name: 'CreateNewGallery',
-		component: CreateNewGallery
+		component: CreateNewGallery,
+		meta: { authRequired: true }		
 	},
 	{
 		path: '/my-galleries',
 		name: 'MyGalleries',
-		component: MyGalleries
+		component: MyGalleries,
+		meta: { authRequired: true }				
 	},
 	{
 		path: '/galleries/:id',
@@ -49,6 +54,12 @@ const routes = [
 		path: '/authors/:id',
 		name: 'AuthorGalleries',
 		component: AuthorGalleries
+	},
+	{
+		path: '/edit-gallery/:id',
+		name: 'EditGallery',
+		component: EditGallery,
+		meta: { authRequired: true }				
 	}
 ]
 
