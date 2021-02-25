@@ -1,13 +1,20 @@
 <template>
 	<div id="app">
-		<div id="nav">
-			<h1> Galleries Vue App Project </h1>
-			<router-link to="/"> All galleries </router-link> | 
-			<router-link to="/login"> Login </router-link>
-		</div>
+		<h1> Galleries Project </h1>
+		<nav-bar/>
 		<router-view/>
 	</div>
 </template>
+
+<script>
+import NavBar from './components/NavBar.vue';
+
+export default {
+	name: 'app',
+	components: { NavBar }
+}
+</script>
+
 
 <style>
 #app {
