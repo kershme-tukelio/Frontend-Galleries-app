@@ -17,12 +17,15 @@
 
 <script>
 // import { mapActions, mapGetters, mapMutations } from 'vuex';
-import { mapGetters } from 'vuex';
+import { mapGetters, mapActions } from 'vuex';
 
 export default {
     name: 'nav-bar',
     computed: {
         ...mapGetters('auth', ['isAuthenticated'])
+    },
+    methods: {
+        ...mapActions('auth', ['logout'])        
     }
 }
 </script>

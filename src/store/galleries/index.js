@@ -5,7 +5,8 @@ import { getters } from './getters'
 const store = {
     namespaced: true,
     state: {
-        galleries: []
+        galleries: [],
+        searchTerm: ''
     },
     actions,
     mutations,

@@ -5,5 +5,9 @@ export const mutations = {
 
     deleteGallery(state, gallery) {
         state.galleries = state.galleries.filter((g) => g.id !== gallery.id);
+    },
+
+    setSearchTerm(state, searchTerm) {
+        state.searchTerm = searchTerm;
     }
 };
