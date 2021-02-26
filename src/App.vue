@@ -8,10 +8,14 @@
 
 <script>
 import NavBar from './components/NavBar.vue';
+import store from './store'
 
 export default {
 	name: 'app',
-	components: { NavBar }
+	components: { NavBar },
+	async mounted() {
+        await store.dispatch('auth/getActiveUser');
+    },
 }
 </script>
 
